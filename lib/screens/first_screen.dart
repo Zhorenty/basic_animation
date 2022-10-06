@@ -66,135 +66,139 @@ class _LessonsState extends State<Lessons> {
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(10),
             children: [
-              Container(
+              SizedBox(
                 height: 200,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 5)),
+                    side: BorderSide(color: Colors.redAccent, width: 5),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(fontSize: 15),
-                      children: <TextSpan>[
-                        TextSpan(text: 'первая пара'),
-                        TextSpan(text: 'вторая пара'),
-                        TextSpan(text: 'третья пара'),
-                        TextSpan(text: 'четвертая пара'),
-                        TextSpan(text: 'пятая пара'),
-                        TextSpan(text: 'шестая пара'),
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('ПОНЕДЕЛЬНИК'),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Text('первая пара'),
+                      Text('вторая пара'),
+                      Text('третья пара'),
+                      Text('четвертая пара'),
+                      Text('пятая пара'),
+                      Text('шестая пара'),
+                    ],
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 5)),
+                    side: BorderSide(color: Colors.redAccent, width: 5),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(fontSize: 15),
-                      children: <TextSpan>[
-                        TextSpan(text: 'первая пара'),
-                        TextSpan(text: 'вторая пара'),
-                        TextSpan(text: 'третья пара'),
-                        TextSpan(text: 'четвертая пара'),
-                        TextSpan(text: 'пятая пара'),
-                        TextSpan(text: 'шестая пара'),
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('первая пара'),
+                      Text('вторая пара'),
+                      Text('третья пара'),
+                      Text('четвертая пара'),
+                      Text('пятая пара'),
+                      Text('шестая пара'),
+                    ],
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 5)),
+                    side: BorderSide(color: Colors.redAccent, width: 5),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(fontSize: 15),
-                      children: <TextSpan>[
-                        TextSpan(text: 'первая пара'),
-                        TextSpan(text: 'вторая пара'),
-                        TextSpan(text: 'третья пара'),
-                        TextSpan(text: 'четвертая пара'),
-                        TextSpan(text: 'пятая пара'),
-                        TextSpan(text: 'шестая пара'),
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('первая пара'),
+                      Text('вторая пара'),
+                      Text('третья пара'),
+                      Text('четвертая пара'),
+                      Text('пятая пара'),
+                      Text('шестая пара'),
+                    ],
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 5)),
+                    side: BorderSide(color: Colors.redAccent, width: 5),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(fontSize: 15),
-                      children: <TextSpan>[
-                        TextSpan(text: 'первая пара'),
-                        TextSpan(text: 'вторая пара'),
-                        TextSpan(text: 'третья пара'),
-                        TextSpan(text: 'четвертая пара'),
-                        TextSpan(text: 'пятая пара'),
-                        TextSpan(text: 'шестая пара'),
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('первая пара'),
+                      Text('вторая пара'),
+                      Text('третья пара'),
+                      Text('четвертая пара'),
+                      Text('пятая пара'),
+                      Text('шестая пара'),
+                    ],
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 5)),
+                    side: BorderSide(color: Colors.redAccent, width: 5),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(fontSize: 15),
-                      children: <TextSpan>[
-                        TextSpan(text: 'первая пара'),
-                        TextSpan(text: 'вторая пара'),
-                        TextSpan(text: 'третья пара'),
-                        TextSpan(text: 'четвертая пара'),
-                        TextSpan(text: 'пятая пара'),
-                        TextSpan(text: 'шестая пара'),
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('первая пара'),
+                      Text('вторая пара'),
+                      Text('третья пара'),
+                      Text('четвертая пара'),
+                      Text('пятая пара'),
+                      Text('шестая пара'),
+                    ],
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 5)),
+                    side: BorderSide(color: Colors.redAccent, width: 5),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(fontSize: 15),
-                      children: <TextSpan>[
-                        TextSpan(text: 'первая пара'),
-                        TextSpan(text: 'вторая пара'),
-                        TextSpan(text: 'третья пара'),
-                        TextSpan(text: 'четвертая пара'),
-                        TextSpan(text: 'пятая пара'),
-                        TextSpan(text: 'шестая пара'),
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('первая пара'),
+                      Text('вторая пара'),
+                      Text('третья пара'),
+                      Text('четвертая пара'),
+                      Text('пятая пара'),
+                      Text('шестая пара'),
+                    ],
                   ),
                 ),
               ),
