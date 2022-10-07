@@ -57,11 +57,6 @@ class _LessonsState extends State<Lessons> {
     return Scaffold(
       body: Stack(
         children: [
-          Column(
-            children: [
-              Icon(Icons.abc),
-            ],
-          ),
           ListView(
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(10),
@@ -75,20 +70,29 @@ class _LessonsState extends State<Lessons> {
                   ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text('ПОНЕДЕЛЬНИК'),
-                      SizedBox(
-                        height: 12,
+                  child: ListTile(
+                    title: Container(
+                      color: Colors.grey,
+                      margin: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Понедельник',
+                        style: TextStyle(fontFamily: 'MinouDemo'),
                       ),
-                      Text('первая пара'),
-                      Text('вторая пара'),
-                      Text('третья пара'),
-                      Text('четвертая пара'),
-                      Text('пятая пара'),
-                      Text('шестая пара'),
-                    ],
+                    ),
+                    subtitle: (Column(
+                      children: [
+                        Text(
+                          'первая пара',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        Text('вторая пара'),
+                        Text('третья пара'),
+                        Text('четвертая пара'),
+                        Text('пятая пара'),
+                        Text('шестая пара'),
+                      ],
+                    )),
                   ),
                 ),
               ),
