@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'second_screen.dart';
+import 'dart:math';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -28,11 +29,7 @@ class FirstScreen extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SecondScreen()),
-                  );
+                  Navigator.pushNamed(context, '/second');
                 },
                 child: const Text('На вторую неделю'),
               ),
@@ -52,6 +49,11 @@ class Lessons extends StatefulWidget {
 }
 
 class _LessonsState extends State<Lessons> {
+  double _width = 50;
+  double _height = 50;
+  Color _color = Colors.green;
+  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +63,11 @@ class _LessonsState extends State<Lessons> {
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(10),
             children: [
+              AnimatedContainer(
+                width: _width,
+                height: _height,
+                duration: Duration(seconds: 1),
+              ),
               SizedBox(
                 height: 200,
                 child: Card(
@@ -70,29 +77,20 @@ class _LessonsState extends State<Lessons> {
                   ),
                   elevation: 8,
                   margin: EdgeInsets.all(12),
-                  child: ListTile(
-                    title: Container(
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.redAccent, width: 0.5),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Container(
                       color: Colors.grey,
-                      margin: EdgeInsets.all(12),
-                      padding: EdgeInsets.all(12),
+                      margin: EdgeInsets.fromLTRB(5, 5, 150, 100),
+                      padding: EdgeInsets.all(5),
                       child: Text(
                         'Понедельник',
-                        style: TextStyle(fontFamily: 'MinouDemo'),
+                        style: TextStyle(fontFamily: 'MinouDemo', fontSize: 20),
                       ),
                     ),
-                    subtitle: (Column(
-                      children: [
-                        Text(
-                          'первая пара',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        Text('вторая пара'),
-                        Text('третья пара'),
-                        Text('четвертая пара'),
-                        Text('пятая пара'),
-                        Text('шестая пара'),
-                      ],
-                    )),
                   ),
                 ),
               ),

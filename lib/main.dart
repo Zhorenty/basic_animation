@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/first_screen.dart';
+import 'package:my_app/screens/second_screen.dart';
 
 void main() {
   runApp(const TimeTable());
@@ -11,11 +12,14 @@ class TimeTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Navigator',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: const FirstScreen(),
-    );
+        title: 'Flutter Navigator',
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => FirstScreen(),
+          '/second': (context) => SecondScreen(),
+        });
   }
 }
