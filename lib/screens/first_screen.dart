@@ -49,9 +49,11 @@ class Lessons extends StatefulWidget {
 }
 
 class _LessonsState extends State<Lessons> {
+  String day = 'dada';
+  String pari = '1 пара';
   double _width = 50;
   double _height = 50;
-  Color _color = Colors.green;
+  Color _color = Colors.red;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
 
   @override
@@ -64,145 +66,35 @@ class _LessonsState extends State<Lessons> {
             padding: const EdgeInsets.all(10),
             children: [
               AnimatedContainer(
+                child: TextButton(
+                  child: Text(
+                    day,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      day = pari;
+
+                      _width = 200;
+                      _height = 200;
+
+                      _color = Colors.redAccent;
+
+                      _borderRadius = BorderRadius.circular(50);
+                    });
+                  },
+                ),
+
                 width: _width,
                 height: _height,
-                duration: Duration(seconds: 1),
-              ),
-              SizedBox(
-                height: 200,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.redAccent, width: 5),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  elevation: 8,
-                  margin: EdgeInsets.all(12),
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.redAccent, width: 0.5),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Container(
-                      color: Colors.grey,
-                      margin: EdgeInsets.fromLTRB(5, 5, 150, 100),
-                      padding: EdgeInsets.all(5),
-                      child: Text(
-                        'Понедельник',
-                        style: TextStyle(fontFamily: 'MinouDemo', fontSize: 20),
-                      ),
-                    ),
-                  ),
+                decoration: BoxDecoration(
+                  color: _color,
+                  borderRadius: _borderRadius,
                 ),
-              ),
-              SizedBox(
-                height: 200,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.redAccent, width: 5),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  elevation: 8,
-                  margin: EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('первая пара'),
-                      Text('вторая пара'),
-                      Text('третья пара'),
-                      Text('четвертая пара'),
-                      Text('пятая пара'),
-                      Text('шестая пара'),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 200,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.redAccent, width: 5),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  elevation: 8,
-                  margin: EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('первая пара'),
-                      Text('вторая пара'),
-                      Text('третья пара'),
-                      Text('четвертая пара'),
-                      Text('пятая пара'),
-                      Text('шестая пара'),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 200,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.redAccent, width: 5),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  elevation: 8,
-                  margin: EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('первая пара'),
-                      Text('вторая пара'),
-                      Text('третья пара'),
-                      Text('четвертая пара'),
-                      Text('пятая пара'),
-                      Text('шестая пара'),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 200,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.redAccent, width: 5),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  elevation: 8,
-                  margin: EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('первая пара'),
-                      Text('вторая пара'),
-                      Text('третья пара'),
-                      Text('четвертая пара'),
-                      Text('пятая пара'),
-                      Text('шестая пара'),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 200,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.redAccent, width: 5),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  elevation: 8,
-                  margin: EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('первая пара'),
-                      Text('вторая пара'),
-                      Text('третья пара'),
-                      Text('четвертая пара'),
-                      Text('пятая пара'),
-                      Text('шестая пара'),
-                    ],
-                  ),
-                ),
+                // Define how long the animation should take.
+                duration: const Duration(seconds: 1),
+                // Provide an optional curve to make the animation feel smoother.
+                curve: Curves.fastOutSlowIn,
               ),
             ],
           ),
