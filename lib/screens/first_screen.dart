@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'second_screen.dart';
 import 'dart:math';
+import '../events.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -49,10 +50,14 @@ class Lessons extends StatefulWidget {
 }
 
 class _LessonsState extends State<Lessons> {
-  String day = 'dada';
-  String pari = '1 пара';
+  var poned = Event(
+      lesson: 'philosophy', cabinet: '223gd', startDateTime: DateTime.now());
+  var lessons = [];
+  var pon = ['220гд', "120эк", "225эл", 'adsasda', 'asdasdasd'];
+
   double _width = 50;
   double _height = 50;
+
   Color _color = Colors.red;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
 
@@ -68,33 +73,142 @@ class _LessonsState extends State<Lessons> {
               AnimatedContainer(
                 child: TextButton(
                   child: Text(
-                    day,
-                    style: TextStyle(color: Colors.white),
+                    pon[0],
+                    style: const TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
                     setState(() {
-                      day = pari;
-
                       _width = 200;
                       _height = 200;
-
                       _color = Colors.redAccent;
-
                       _borderRadius = BorderRadius.circular(50);
                     });
                   },
                 ),
-
                 width: _width,
                 height: _height,
                 decoration: BoxDecoration(
                   color: _color,
                   borderRadius: _borderRadius,
                 ),
-                // Define how long the animation should take.
                 duration: const Duration(seconds: 1),
-                // Provide an optional curve to make the animation feel smoother.
                 curve: Curves.fastOutSlowIn,
+              ),
+              SizedBox(
+                height: 50,
+                width: 50,
+              ),
+              AnimatedContainer(
+                child: TextButton(
+                  child: Text(
+                    pon[1],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _width = 200;
+                      _height = 200;
+                      _color = Colors.redAccent;
+                      _borderRadius = BorderRadius.circular(50);
+                    });
+                  },
+                ),
+                width: _width,
+                height: _height,
+                decoration: BoxDecoration(
+                  color: _color,
+                  borderRadius: _borderRadius,
+                ),
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn,
+              ),
+              SizedBox(
+                height: 50,
+                width: 50,
+              ),
+              AnimatedContainer(
+                child: TextButton(
+                  child: Text(
+                    pon[2],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _width = 200;
+                      _height = 200;
+                      _color = Colors.redAccent;
+                      _borderRadius = BorderRadius.circular(50);
+                    });
+                  },
+                ),
+                width: _width,
+                height: _height,
+                decoration: BoxDecoration(
+                  color: _color,
+                  borderRadius: _borderRadius,
+                ),
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn,
+              ),
+              SizedBox(
+                height: 50,
+                width: 50,
+              ),
+              AnimatedContainer(
+                child: TextButton(
+                  child: Text(
+                    pon[3],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _width = 200;
+                      _height = 200;
+                      _color = Colors.redAccent;
+                      _borderRadius = BorderRadius.circular(50);
+                    });
+                  },
+                ),
+                width: _width,
+                height: _height,
+                decoration: BoxDecoration(
+                  color: _color,
+                  borderRadius: _borderRadius,
+                ),
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn,
+              ),
+              SizedBox(
+                height: 50,
+                width: 50,
+              ),
+              AnimatedContainer(
+                child: TextButton(
+                  child: Text(
+                    pon[4],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _width = 200;
+                      _height = 200;
+                      _color = Colors.redAccent;
+                      _borderRadius = BorderRadius.circular(50);
+                    });
+                  },
+                ),
+                width: _width,
+                height: _height,
+                decoration: BoxDecoration(
+                  color: _color,
+                  borderRadius: _borderRadius,
+                ),
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn,
+              ),
+              SizedBox(
+                height: 50,
+                width: 50,
               ),
             ],
           ),
