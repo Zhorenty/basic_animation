@@ -59,12 +59,12 @@ class Lessons extends StatefulWidget {
 }
 
 class _LessonsState extends State<Lessons> {
-  bool toggle = true;
-
+  var toggle = true;
   var poned = Event(
       lesson: 'philosophy', cabinet: '223gd', startDateTime: DateTime.now());
-  var lessons = [];
-  var pon = [
+  String day = 'понедельник';
+  String pon = 'фывф';
+  var days = [
     'Понедельник',
     'Вторник',
     'Среда',
@@ -72,7 +72,7 @@ class _LessonsState extends State<Lessons> {
     'Пятница',
   ];
 
-  var i = 1;
+  var e = Event(lesson: '11', cabinet: 'e1', startDateTime: DateTime.now());
 
   double width = 50;
   double _height = 50;
@@ -92,24 +92,30 @@ class _LessonsState extends State<Lessons> {
               AnimatedContainer(
                 child: TextButton(
                   child: Text(
-                    pon[0],
+                    day,
                     style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
                     setState(() {
-                      if (width == 200) {
-                        width = 50;
-                        _height = 50;
-                        print('toggle was changed');
-                      } else if (width == 50) {
-                        width = 200;
-                        _height = 200;
-                        _color = Colors.redAccent;
-                        _borderRadius = BorderRadius.circular(50);
-                        print('object');
+                      switch (toggle) {
+                        case true:
+                          width = 200;
+                          _height = 200;
+                          _color = Colors.redAccent;
+                          _borderRadius = BorderRadius.circular(50);
+                          toggle = false;
+                          day = '1. Физика    Однорукий    225 эл ';
+                          break;
+                        case false:
+                          width = 50;
+                          _height = 50;
+                          _color = Colors.red;
+                          _borderRadius = BorderRadius.circular(8);
+                          toggle = true;
+                          day = 'Понедельник';
+                          break;
+                        default:
                       }
-                      ;
-                      ;
                     });
                   },
                 ),
@@ -129,7 +135,7 @@ class _LessonsState extends State<Lessons> {
               AnimatedContainer(
                 child: TextButton(
                   child: Text(
-                    pon[1],
+                    days[1],
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
@@ -138,12 +144,12 @@ class _LessonsState extends State<Lessons> {
                         width = 50;
                         _height = 50;
                         _color = Colors.red;
-                        _borderRadius = _borderRadius;
+                        _borderRadius = BorderRadius.circular(8);
                         print('toggle was changed');
                       } else if (width == 50) {
                         width = 200;
                         _height = 200;
-                        _color = Colors.redAccent;
+                        _color = Colors.red;
                         _borderRadius = BorderRadius.circular(50);
                         print('object');
                       }
