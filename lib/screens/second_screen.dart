@@ -23,7 +23,8 @@ class SecondScreen extends StatelessWidget {
               padding: EdgeInsets.all(12),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/', ((route) => false));
                 },
                 child: const Text('На первую неделю'),
               ),

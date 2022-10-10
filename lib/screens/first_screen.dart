@@ -10,11 +10,6 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.add_box,
-          size: 20,
-          textDirection: TextDirection.rtl,
-        ),
         centerTitle: true,
         title: const Text('Первая неделя'),
       ),
@@ -24,15 +19,29 @@ class FirstScreen extends StatelessWidget {
             child: ElevatedButton(child: Text('asdada'), onPressed: null),
           ),
           Lessons(),
-          Column(
+          Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/second');
-                },
-                child: const Text('На вторую неделю'),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Container(
+                      width: 200,
+                      height: 75,
+                      margin: EdgeInsets.all(0),
+                      padding: EdgeInsets.all(12),
+                      child: (ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/second', ((route) => false));
+                        },
+                        child: const Text(
+                          'На вторую неделю',
+                          style: TextStyle(),
+                        ),
+                      ))),
+                ],
               ),
             ],
           ),
@@ -50,12 +59,22 @@ class Lessons extends StatefulWidget {
 }
 
 class _LessonsState extends State<Lessons> {
+  bool toggle = true;
+
   var poned = Event(
       lesson: 'philosophy', cabinet: '223gd', startDateTime: DateTime.now());
   var lessons = [];
-  var pon = ['220гд', "120эк", "225эл", 'adsasda', 'asdasdasd'];
+  var pon = [
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница',
+  ];
 
-  double _width = 50;
+  var i = 1;
+
+  double width = 50;
   double _height = 50;
 
   Color _color = Colors.red;
@@ -74,18 +93,27 @@ class _LessonsState extends State<Lessons> {
                 child: TextButton(
                   child: Text(
                     pon[0],
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
                     setState(() {
-                      _width = 200;
-                      _height = 200;
-                      _color = Colors.redAccent;
-                      _borderRadius = BorderRadius.circular(50);
+                      if (width == 200) {
+                        width = 50;
+                        _height = 50;
+                        print('toggle was changed');
+                      } else if (width == 50) {
+                        width = 200;
+                        _height = 200;
+                        _color = Colors.redAccent;
+                        _borderRadius = BorderRadius.circular(50);
+                        print('object');
+                      }
+                      ;
+                      ;
                     });
                   },
                 ),
-                width: _width,
+                width: width,
                 height: _height,
                 decoration: BoxDecoration(
                   color: _color,
@@ -106,14 +134,25 @@ class _LessonsState extends State<Lessons> {
                   ),
                   onPressed: () {
                     setState(() {
-                      _width = 200;
-                      _height = 200;
-                      _color = Colors.redAccent;
-                      _borderRadius = BorderRadius.circular(50);
+                      if (width == 200) {
+                        width = 50;
+                        _height = 50;
+                        _color = Colors.red;
+                        _borderRadius = _borderRadius;
+                        print('toggle was changed');
+                      } else if (width == 50) {
+                        width = 200;
+                        _height = 200;
+                        _color = Colors.redAccent;
+                        _borderRadius = BorderRadius.circular(50);
+                        print('object');
+                      }
+                      ;
+                      ;
                     });
                   },
                 ),
-                width: _width,
+                width: width,
                 height: _height,
                 decoration: BoxDecoration(
                   color: _color,
@@ -121,94 +160,6 @@ class _LessonsState extends State<Lessons> {
                 ),
                 duration: const Duration(seconds: 1),
                 curve: Curves.fastOutSlowIn,
-              ),
-              SizedBox(
-                height: 50,
-                width: 50,
-              ),
-              AnimatedContainer(
-                child: TextButton(
-                  child: Text(
-                    pon[2],
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _width = 200;
-                      _height = 200;
-                      _color = Colors.redAccent;
-                      _borderRadius = BorderRadius.circular(50);
-                    });
-                  },
-                ),
-                width: _width,
-                height: _height,
-                decoration: BoxDecoration(
-                  color: _color,
-                  borderRadius: _borderRadius,
-                ),
-                duration: const Duration(seconds: 1),
-                curve: Curves.fastOutSlowIn,
-              ),
-              SizedBox(
-                height: 50,
-                width: 50,
-              ),
-              AnimatedContainer(
-                child: TextButton(
-                  child: Text(
-                    pon[3],
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _width = 200;
-                      _height = 200;
-                      _color = Colors.redAccent;
-                      _borderRadius = BorderRadius.circular(50);
-                    });
-                  },
-                ),
-                width: _width,
-                height: _height,
-                decoration: BoxDecoration(
-                  color: _color,
-                  borderRadius: _borderRadius,
-                ),
-                duration: const Duration(seconds: 1),
-                curve: Curves.fastOutSlowIn,
-              ),
-              SizedBox(
-                height: 50,
-                width: 50,
-              ),
-              AnimatedContainer(
-                child: TextButton(
-                  child: Text(
-                    pon[4],
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _width = 200;
-                      _height = 200;
-                      _color = Colors.redAccent;
-                      _borderRadius = BorderRadius.circular(50);
-                    });
-                  },
-                ),
-                width: _width,
-                height: _height,
-                decoration: BoxDecoration(
-                  color: _color,
-                  borderRadius: _borderRadius,
-                ),
-                duration: const Duration(seconds: 1),
-                curve: Curves.fastOutSlowIn,
-              ),
-              SizedBox(
-                height: 50,
-                width: 50,
               ),
             ],
           ),
