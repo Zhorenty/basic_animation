@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/example.dart';
 import 'screens/first_screen.dart';
+
+class ClassName {
+  var a1 = ['Понедельник', 'Вторник'];
+}
 
 class AContainer extends StatefulWidget {
   const AContainer({super.key});
@@ -8,20 +13,34 @@ class AContainer extends StatefulWidget {
   State<AContainer> createState() => _AContainerState();
 }
 
-var day = 'Понедельник';
+@override
+var pon = 'Понедельник';
 var toggle = true;
 double width = 50;
 double _height = 50;
-Color _color = Colors.grey;
+Color _color = Colors.red;
 BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
+var a2 = ['Понедельник', 'Вторник'];
+var ponedelnik = StudyDay(
+    lessons: [Lesson(lessonName: 'Физика'), Lesson(lessonName: 'lessonName')],
+    studyDayName: 'asdadadad');
 
+@override
 class _AContainerState extends State<AContainer> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
+      width: width,
+      height: _height,
+      decoration: BoxDecoration(
+        color: _color,
+        borderRadius: _borderRadius,
+      ),
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.fastOutSlowIn,
       child: TextButton(
         child: Text(
-          day,
+          pon,
           style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
         onPressed: () {
@@ -33,7 +52,7 @@ class _AContainerState extends State<AContainer> {
                 _color = Colors.redAccent;
                 _borderRadius = BorderRadius.circular(50);
                 toggle = false;
-                day = '1. Физика   225 эл ';
+                pon = 'asdasdasd';
                 break;
               case false:
                 width = 50;
@@ -41,21 +60,13 @@ class _AContainerState extends State<AContainer> {
                 _color = Colors.red;
                 _borderRadius = BorderRadius.circular(8);
                 toggle = true;
-                day = 'Понедельник';
+                pon = 'Понедельник';
                 break;
               default:
             }
           });
         },
       ),
-      width: width,
-      height: _height,
-      decoration: BoxDecoration(
-        color: _color,
-        borderRadius: _borderRadius,
-      ),
-      duration: const Duration(seconds: 1),
-      curve: Curves.fastOutSlowIn,
     );
   }
 }

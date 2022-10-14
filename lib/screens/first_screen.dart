@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'second_screen.dart';
-import 'dart:math';
+import 'package:my_app/example.dart';
 import '../animatedContainer.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -10,14 +9,21 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 60,
+        leading: Container(
+          padding: EdgeInsets.all(5),
+          child: (CircleAvatar(
+            radius: 10,
+            foregroundImage: NetworkImage(
+              'https://sun9-23.userapi.com/impg/IfdPomPdZFc2LHTqL4boIfteo-_-ccmmQS9kHA/YsqjXNwzPDU.jpg?size=984x984&quality=96&sign=72ffb43160358ce3ccf34effb6545c90&type=album',
+            ),
+          )),
+        ),
         centerTitle: true,
         title: const Text('Первая неделя'),
       ),
       body: Stack(
         children: [
-          Container(
-            child: ElevatedButton(child: Text('asdada'), onPressed: null),
-          ),
           Lessons(),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -27,20 +33,21 @@ class FirstScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
-                      width: 200,
-                      height: 75,
-                      margin: EdgeInsets.all(0),
-                      padding: EdgeInsets.all(12),
-                      child: (ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, '/second', ((route) => false));
-                        },
-                        child: const Text(
-                          'На вторую неделю',
-                          style: TextStyle(),
-                        ),
-                      ))),
+                    width: 200,
+                    height: 75,
+                    margin: EdgeInsets.all(0),
+                    padding: EdgeInsets.all(12),
+                    child: (ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/second', ((route) => false));
+                      },
+                      child: const Text(
+                        'На вторую неделю',
+                        style: TextStyle(),
+                      ),
+                    )),
+                  ),
                 ],
               ),
             ],
@@ -59,23 +66,12 @@ class Lessons extends StatefulWidget {
 }
 
 class _LessonsState extends State<Lessons> {
+  @override
   var toggle = true;
-  // var poned = Event(
-  //     lesson: 'philosophy', cabinet: '223gd', startDateTime: DateTime.now());
   String day = 'понедельник';
-  String pon = 'фывф';
-  var days = [
-    'Понедельник',
-    'Вторник',
-    'Среда',
-    'Четверг',
-    'Пятница',
-  ];
-
   double width = 50;
   double _height = 50;
-
-  Color _color = Colors.grey;
+  Color _color = Colors.red;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
 
   @override
